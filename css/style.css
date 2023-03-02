@@ -1,6 +1,9 @@
-.bi-arrow-right {
+#details-btn {
+    cursor: pointer;
+    border: 0;
     padding: 15px 18px;
     border-radius: 50px;
+    background-color: #F8D7DA;
 }
 
 .card-img-top {

@@ -15,7 +15,7 @@ const showData = data => {
             <img src="${singleData.image}" class="card-img-top" alt="...">
             <div class="card-body">
                 <div>
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Features</h5>
                     <ol>
                         <li>${singleData.features[0]}</li>
                         <li>${singleData.features[1]}</li>
@@ -25,13 +25,13 @@ const showData = data => {
                 <hr>
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">${singleData.name}</h5>
                         <div>
                             <p><i class="bi bi-calendar4-week"></i> <span id="date-time">${singleData.published_in}</span></p>
                         </div>
                     </div>
                     <div>
-                        <i class="bi bi-arrow-right bg-danger-subtle text-danger"></i>
+                       <button type="button" id="details-btn"  data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="bi bi-arrow-right text-danger"></i></button>
                     </div>
                 </div>
             </div>
