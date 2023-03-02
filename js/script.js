@@ -1,7 +1,8 @@
 const fetchData = () => {
     fetch('https://openapi.programming-hero.com/api/ai/tools')
         .then((res) => res.json())
-        .then((data) => showData(data.data.tools))
+        .then((data) => showData(data.data.tools));
+    toggleSpinner(true);
 }
 
 const showData = data => {
@@ -39,5 +40,16 @@ const showData = data => {
     </div>
         `
     })
+    toggleSpinner(false);
 }
+
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if (isLoading) {
+        loaderSection.classList.remove('d-none')
+    } else {
+        loaderSection.classList.add('d-none')
+    }
+}
+
 fetchData()
