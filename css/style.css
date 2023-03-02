@@ -2,3 +2,8 @@
     padding: 15px 18px;
     border-radius: 50px;
 }
+
+.card-img-top {
+    height: 200px;
+    border-radius: 15px;
+}
