@@ -7,7 +7,9 @@ const fetchData = () => {
     })
   toggleSpinner(true);
 };
+
 // Card
+
 const showData = (data) => {
   const dataArea = document.getElementById('data-area');
   dataArea.innerHTML = '';
@@ -45,7 +47,9 @@ const showData = (data) => {
   });
   toggleSpinner(false);
 };
+
 // Getting id and calling modal to display details
+
 const loadDataDetails = dataId => {
   // console.log(dataId);
   if (dataId >= 10) {
@@ -60,15 +64,17 @@ const loadDataDetails = dataId => {
       .then(data => displayDetails(data.data))
   }
 }
+
 // Modal
+
 const displayDetails = details => {
   console.log(details);
   const modalBody = document.getElementById('modal-body');
   modalBody.innerHTML = `
  <div class="row px-5 pb-5">
- <div class="col-md-6 bg-danger-subtle border border-danger-subtle rounded-2">
+    <div class="col-md-6 bg-danger-subtle border border-danger-subtle rounded-2">
      <h5>${details.description}</h5>
-     <div class="d-flex justify-content-around">
+     <div class="d-block d-md-flex justify-content-around ">
      ${details.pricing.map(price => `<p class="bg-white m-1 p-2 rounded">${price.price === '0' && 'free' ? 'Free of Cost' : price.price}/${price.plan}</p>`).join('')}
      </div>
      <div class="d-flex justify-content-between">
@@ -88,9 +94,12 @@ const displayDetails = details => {
          </div>
      </div>
  </div>
- <div class="col-md-6">
+ <div class="col-md-6 mt-4 mt-md-0">
      <div class="card p-3">
-         <img id="modal-img" class="img-fluid rounded rounded-2" src="${details.image_link[0]}" alt="">
+     <div>
+     <button class="py-1 px-4 bg-danger text-white border-0 rounded-1 position-absolute z-3 text-end"><span class="accuracy-value"></span>accuracy</button>
+     <img id="modal-img" class="img-fluid rounded rounded-2 position-relative" src="${details.image_link[0]}" alt="">
+     </div>
          <div>
              <h5>${details.input_output_examples[0].input}</h5>
              <p>${details.input_output_examples[0].output}</p>
@@ -130,9 +139,8 @@ function sortCards() {
 const sortButton = document.querySelector('#sort-data');
 sortButton.addEventListener('click', sortCards);
 
+// See More button
 
-
-// See More
 const seeMoreButton = (data) => {
   const seeMoreBtn = document.getElementById('see-more');
   seeMoreBtn.addEventListener('click', () => {
@@ -140,7 +148,9 @@ const seeMoreButton = (data) => {
     seeMoreBtn.style.display = 'none';
   });
 };
+
 // Loader
+
 const toggleSpinner = (isLoading) => {
   const loaderSection = document.getElementById('loader');
   if (isLoading) {
