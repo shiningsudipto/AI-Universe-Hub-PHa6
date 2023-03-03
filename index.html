@@ -35,94 +35,22 @@
         </section>
         <!-- cards -->
         <section>
-            <div class="row row-cols-1 row-cols-md-3 g-4" id="data-area">
-                <!-- <div class="col">
-                    <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div>
-                                <h5 class="card-title">Card title</h5>
-                                <ol>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ol>
-                            </div>
-                            <hr>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h5 class="card-title">Card title</h5>
-                                    <div>
-                                        <p><i class="bi bi-calendar4-week"></i> <span id="date-time">date</span></p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <i class="bi bi-arrow-right bg-danger-subtle text-danger"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-            <!-- Modal -->
+            <div class="row row-cols-1 row-cols-md-3 g-4 cards-container" id="data-area">
 
-            <!-- Button trigger modal -->
-            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
-            </button> -->
+            </div>
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
+                <div style="max-width: 70%;" class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="">
+                            <button type="button" class="btn-close float-end p-3" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-6 bg-danger-subtle border border-danger-subtle rounded-2">
-                                    <h3></h3>
-                                    <div class="d-flex justify-content-evenly">
-                                        <p class="text-success bg-white p-2 rounded">Hey</p>
-                                        <p class="text-warning bg-white p-2 rounded">Hey</p>
-                                        <p class="text-danger bg-white p-2 rounded">Hey</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <div>
-                                            <h5>Features</h5>
-                                            <ul>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <h5>Integrations</h5>
-                                            <ul>
-                                                <li></li>
-                                                <li></li>
-                                                <li></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card p-3">
-                                        <img class="img-fluid rounded rounded-2" src="" alt="">
-                                        <div>
-                                            <h5>Hi, how are you doing today?</h5>
-                                            <p>I'm doing well, thank you for asking. How can I assist you today?</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="modal-body" id="modal-body">
+
                         </div>
-                        <!-- <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div> -->
                     </div>
                 </div>
             </div>
