@@ -2,6 +2,7 @@ const fetchData = () => {
   fetch('https://openapi.programming-hero.com/api/ai/tools')
     .then((res) => res.json())
     .then((data) => {
+
       showData(data.data.tools.slice(0, 6));
       seeMoreButton(data.data.tools);
     })
@@ -68,7 +69,16 @@ const loadDataDetails = dataId => {
 // Modal
 
 const displayDetails = details => {
-  console.log(details);
+  console.log(details.accuracy.score);
+
+  // if (details.accuracy.score) {
+  //   let btnValue = document.getElementsByClassName('btn-value');
+  //   btnValue.classList.remove('d-none')
+  // }
+  // else {
+  //   btnValue.classList.add('d-none')
+  //   console.log(kk)
+  // }
   const modalBody = document.getElementById('modal-body');
   modalBody.innerHTML = `
  <div class="row px-5 pb-5">
@@ -97,7 +107,11 @@ const displayDetails = details => {
  <div class="col-md-6 mt-4 mt-md-0">
      <div class="card p-3">
      <div>
-     <button class="py-1 px-4 bg-danger text-white border-0 rounded-1 position-absolute z-3 text-end"><span class="accuracy-value"></span>accuracy</button>
+     <div class="${details.accuracy.score == null ? 'd-none' : ''}"> 
+     
+     <button id="btnValue" class="btn-value py-1 px-4 bg-danger text-white border-0 rounded-1 position-absolute z-3 text-end"><span id="accuracy-value" class="accuracy-value">${details.accuracy.score == null ? details.accuracy.score : ' '} </span>accuracy</button>
+     </div>
+     
      <img id="modal-img" class="img-fluid rounded rounded-2 position-relative" src="${details.image_link[0]}" alt="">
      </div>
          <div>

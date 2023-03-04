@@ -6,6 +6,12 @@
     background-color: #F8D7DA;
 }
 
+.card {
+    height: 100% !important;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
 .card-img-top {
     height: 200px;
     border-radius: 15px;
