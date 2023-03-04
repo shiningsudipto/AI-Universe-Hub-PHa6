@@ -2,7 +2,6 @@ const fetchData = () => {
   fetch('https://openapi.programming-hero.com/api/ai/tools')
     .then((res) => res.json())
     .then((data) => {
-
       showData(data.data.tools.slice(0, 6));
       seeMoreButton(data.data.tools);
     })
@@ -16,7 +15,6 @@ const showData = (data) => {
   dataArea.innerHTML = '';
 
   data.forEach((singleData) => {
-    // console.log(singleData);
     dataArea.innerHTML += `
         <div class="col single-card">
           <div class="card h-100">
@@ -52,7 +50,6 @@ const showData = (data) => {
 // Getting id and calling modal to display details
 
 const loadDataDetails = dataId => {
-  // console.log(dataId);
   if (dataId >= 10) {
     const url = `https://openapi.programming-hero.com/api/ai/tool/${dataId}`;
     fetch(url)
@@ -69,7 +66,6 @@ const loadDataDetails = dataId => {
 // Modal
 
 const displayDetails = details => {
-  console.log(details);
   const modalBody = document.getElementById('modal-body');
   modalBody.innerHTML = `
  <div class="row px-md-5 pb-md-5 px-1 pb-1">
