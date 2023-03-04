@@ -72,7 +72,7 @@ const displayDetails = details => {
   console.log(details);
   const modalBody = document.getElementById('modal-body');
   modalBody.innerHTML = `
- <div class="row px-5 pb-5">
+ <div class="row px-md-5 pb-md-5 px-1 pb-1">
     <div class="col-md-6 bg-danger-subtle border border-danger-subtle rounded-2">
      <h5>${details.description}</h5>
 
@@ -117,7 +117,7 @@ const displayDetails = details => {
      <div>
      <div class="${details.accuracy.score == null ? 'd-none' : ''}"> 
      
-     <button id="btnValue" class="btn-value end-0 me-3 py-1 px-4 bg-danger text-white border-0 rounded-1 position-absolute z-3 text-end"><span id="accuracy-value" class="accuracy-value">${details.accuracy.score} </span>accuracy</button>
+     <button id="btnValue" class="btn-value end-0 me-3 py-1 px-md-4 px-1 bg-danger text-white border-0 rounded-1 position-absolute z-3 text-end"><span id="accuracy-value" class="accuracy-value">${details.accuracy.score} </span>accuracy</button>
      </div>
      
      <img id="modal-img" class="img-fluid rounded rounded-2 position-relative" src="${details.image_link[0]}" alt="">
@@ -183,17 +183,3 @@ const toggleSpinner = (isLoading) => {
 };
 
 fetchData();
-
-
-
-
-
-{/* <p>${details.pricing[0].price === '0' || 'free' ? 'Free of cost' : details.pricing[0].price}<br>${details.pricing[0].plan}</p>
-<p>${details.pricing[1].price === '0' || 'free' ? 'Free of cost' : details.pricing[1].price}<br>${details.pricing[1].plan}</p>
-<p>${details.pricing[2].price === '0' || 'free' ? 'Free of cost' : details.pricing[2].price}<br>${details.pricing[2].plan}</p> */}
-
-{/* <div class="d-block d-md-flex justify-content-around ">
-
-${details.pricing.map(price => `<p class="bg-white m-1 p-2 rounded">${price.price === '0' && 'free' ? 'Free of Cost' : price.price}/${price.plan}</p>`).join('')}
-
-</div> */}
