@@ -79,13 +79,10 @@ const displayDetails = details => {
      <div class="prices d-md-flex d-block justify-content-between text-center gap-4 my-3 my-md-0">
      <div class="p-2 bg-light rounded text-success">
      <p class="m-0 p-0 fw-bold">
-        ${details.pricing === null || details.pricing[0].price === '0' || details.pricing[0].price === 'free' || details.pricing[0].price === 'No cost' ? "Free Of Cost" : details.pricing[0].price
-    }<br>Basic
-      </p>
+        ${details.pricing === null || details.pricing[0].price === '0' || details.pricing[0].price === 'free' || details.pricing[0].price === 'No cost' ? "Free Of Cost" : details.pricing[0].price}<br>Basic</p>
      </div>
      <div class="p-2 bg-light rounded text-warning my-2 my-md-0">
-         <p class="m-0 p-0 fw-bold">${details.pricing === null || details.pricing[1].price === '0' || details.pricing[1].price === 'free' || details.pricing[1].price === 'No cost' ? "Free Of Cost" : details.pricing[1].price
-    }<br>Pro</p>
+         <p class="m-0 p-0 fw-bold">${details.pricing === null || details.pricing[1].price === '0' || details.pricing[1].price === 'free' || details.pricing[1].price === 'No cost' ? "Free Of Cost" : details.pricing[1].price}<br>Pro</p>
      </div>
      <div class="p-2 bg-light rounded text-danger">
          <p class="m-0 p-0 fw-bold">${details.pricing ? details.pricing[2].price : "Free Of Cost"}<br>Enterprise</p>
@@ -106,7 +103,7 @@ const displayDetails = details => {
              <ul>
              ${details.integrations && details.integrations.length ?
       details.integrations.map(feature => `<li>${feature}</li>`).join('')
-      : ""
+      : "No data found"
     }
              </ul>
          </div>
@@ -123,7 +120,7 @@ const displayDetails = details => {
      <img id="modal-img" class="img-fluid rounded rounded-2 position-relative" src="${details.image_link[0]}" alt="">
      </div>
          <div>
-             <h5>${details.input_output_examples === null ? 'No data found' : details.input_output_examples[0].input}</h5>
+             <h5>${details.input_output_examples === null ? 'Can you give any example?' : details.input_output_examples[0].input}</h5>
              <p>${details.input_output_examples === null ? 'No! Not Yet! Take a break!!!' : details.input_output_examples[0].output}</p>
          </div>
      </div>
