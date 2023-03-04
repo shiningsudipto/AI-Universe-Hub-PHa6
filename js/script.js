@@ -109,7 +109,7 @@ const displayDetails = details => {
      <div>
      <div class="${details.accuracy.score == null ? 'd-none' : ''}"> 
      
-     <button id="btnValue" class="btn-value py-1 px-4 bg-danger text-white border-0 rounded-1 position-absolute z-3 text-end"><span id="accuracy-value" class="accuracy-value">${details.accuracy.score == null ? details.accuracy.score : ' '} </span>accuracy</button>
+     <button id="btnValue" class="btn-value py-1 px-4 bg-danger text-white border-0 rounded-1 position-absolute z-3 text-end"><span id="accuracy-value" class="accuracy-value">${details.accuracy.score} </span>accuracy</button>
      </div>
      
      <img id="modal-img" class="img-fluid rounded rounded-2 position-relative" src="${details.image_link[0]}" alt="">
