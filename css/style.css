@@ -6,6 +6,10 @@
     background-color: #F8D7DA;
 }
 
+.details-btn:hover {
+    background-color: #ca898e;
+}
+
 .card {
     height: 100% !important;
     border-top-left-radius: 16px;

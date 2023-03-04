@@ -69,24 +69,29 @@ const loadDataDetails = dataId => {
 // Modal
 
 const displayDetails = details => {
-  console.log(details.accuracy.score);
-
-  // if (details.accuracy.score) {
-  //   let btnValue = document.getElementsByClassName('btn-value');
-  //   btnValue.classList.remove('d-none')
-  // }
-  // else {
-  //   btnValue.classList.add('d-none')
-  //   console.log(kk)
-  // }
+  console.log(details);
   const modalBody = document.getElementById('modal-body');
   modalBody.innerHTML = `
  <div class="row px-5 pb-5">
     <div class="col-md-6 bg-danger-subtle border border-danger-subtle rounded-2">
      <h5>${details.description}</h5>
-     <div class="d-block d-md-flex justify-content-around ">
-     ${details.pricing.map(price => `<p class="bg-white m-1 p-2 rounded">${price.price === '0' && 'free' ? 'Free of Cost' : price.price}/${price.plan}</p>`).join('')}
+
+     <div class="prices d-md-flex d-block justify-content-between text-center gap-4 my-3 my-md-0">
+     <div class="p-2 bg-light rounded text-success">
+     <p class="m-0 p-0 fw-bold">
+        ${details.pricing === null || details.pricing[0].price === '0' || details.pricing[0].price === 'free' || details.pricing[0].price === 'No cost' ? "Free Of Cost" : details.pricing[0].price
+    }<br>Basic
+      </p>
      </div>
+     <div class="p-2 bg-light rounded text-warning my-2 my-md-0">
+         <p class="m-0 p-0 fw-bold">${details.pricing === null || details.pricing[1].price === '0' || details.pricing[1].price === 'free' || details.pricing[1].price === 'No cost' ? "Free Of Cost" : details.pricing[1].price
+    }<br>Pro</p>
+     </div>
+     <div class="p-2 bg-light rounded text-danger">
+         <p class="m-0 p-0 fw-bold">${details.pricing ? details.pricing[2].price : "Free Of Cost"}<br>Enterprise</p>
+     </div>
+  </div>
+
      <div class="d-flex justify-content-between">
          <div>
              <h5>Features</h5>
@@ -99,7 +104,10 @@ const displayDetails = details => {
          <div>
              <h5>Integrations</h5>
              <ul>
-               ${details.integrations.map(feature => `<li>${feature}</li>`).join('')}
+             ${details.integrations && details.integrations.length ?
+      details.integrations.map(feature => `<li>${feature}</li>`).join('')
+      : ""
+    }
              </ul>
          </div>
      </div>
@@ -109,14 +117,14 @@ const displayDetails = details => {
      <div>
      <div class="${details.accuracy.score == null ? 'd-none' : ''}"> 
      
-     <button id="btnValue" class="btn-value py-1 px-4 bg-danger text-white border-0 rounded-1 position-absolute z-3 text-end"><span id="accuracy-value" class="accuracy-value">${details.accuracy.score} </span>accuracy</button>
+     <button id="btnValue" class="btn-value end-0 me-3 py-1 px-4 bg-danger text-white border-0 rounded-1 position-absolute z-3 text-end"><span id="accuracy-value" class="accuracy-value">${details.accuracy.score} </span>accuracy</button>
      </div>
      
      <img id="modal-img" class="img-fluid rounded rounded-2 position-relative" src="${details.image_link[0]}" alt="">
      </div>
          <div>
-             <h5>${details.input_output_examples[0].input}</h5>
-             <p>${details.input_output_examples[0].output}</p>
+             <h5>${details.input_output_examples === null ? 'No data found' : details.input_output_examples[0].input}</h5>
+             <p>${details.input_output_examples === null ? 'No! Not Yet! Take a break!!!' : details.input_output_examples[0].output}</p>
          </div>
      </div>
  </div>
@@ -183,3 +191,9 @@ fetchData();
 {/* <p>${details.pricing[0].price === '0' || 'free' ? 'Free of cost' : details.pricing[0].price}<br>${details.pricing[0].plan}</p>
 <p>${details.pricing[1].price === '0' || 'free' ? 'Free of cost' : details.pricing[1].price}<br>${details.pricing[1].plan}</p>
 <p>${details.pricing[2].price === '0' || 'free' ? 'Free of cost' : details.pricing[2].price}<br>${details.pricing[2].plan}</p> */}
+
+{/* <div class="d-block d-md-flex justify-content-around ">
+
+${details.pricing.map(price => `<p class="bg-white m-1 p-2 rounded">${price.price === '0' && 'free' ? 'Free of Cost' : price.price}/${price.plan}</p>`).join('')}
+
+</div> */}
